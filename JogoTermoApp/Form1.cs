@@ -1,10 +1,25 @@
+using TermoLib;
+
 namespace JogoTermoApp
 {
     public partial class Form1 : Form
     {
+        private Termo termo;
+
         public Form1()
         {
             InitializeComponent();
+            termo = new Termo();
+        }
+
+        private void btnM_Click(object sender, EventArgs e)
+        {
+            var button = (Button)sender;
+            var linha = termo.palavraAtual;
+            var coluna = 1;
+            var nomeButton = $"btn{linha}{coluna}";
+            var buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
+            buttonTabuleiro.Text = button.Text;
         }
 
         private void Letter_KeyPress(object sender, KeyPressEventArgs e)
@@ -28,5 +43,6 @@ namespace JogoTermoApp
                 // letter_5 is last — do nothing
             }
         }
+
     }
 }

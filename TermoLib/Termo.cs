@@ -16,7 +16,7 @@
         public string palavraSorteada;
         public List<List<Letra>> tabuleiro;
         public Dictionary<char, char> teclado;
-        int palavraAtual;
+        public int palavraAtual;
 
         public Termo()
         {
