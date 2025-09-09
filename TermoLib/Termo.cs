@@ -17,6 +17,7 @@
         public List<List<Letra>> tabuleiro;
         public Dictionary<char, char> teclado;
         public int palavraAtual;
+        public bool jogoFinalizado = false;
 
         public Termo()
         {
@@ -45,6 +46,10 @@
 
         public void ChecaPalavra(string palavra)
         {
+            if (palavra == palavraSorteada)
+            {
+                jogoFinalizado = true;
+            }
             if (palavra.Length != 5)
             {
                 throw new Exception("A palavra deve ter 5 letras");

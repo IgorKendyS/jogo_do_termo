@@ -46,6 +46,10 @@ namespace JogoTermoApp
             AtualizaTabuleiro();
             AtualizaTeclado();
             coluna = 1;
+            if (termo.jogoFinalizado)
+            {
+                MessageBox.Show("Parabéns, palavra correta!", "Jogo termo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private Button RetornaBotao(string name)
@@ -58,24 +62,33 @@ namespace JogoTermoApp
             for(int col = 1; col <= 5; col++)
             {
                 var letra = termo.tabuleiro[termo.palavraAtual-2][col-1];
-                var nomeBotao = $"btn{termo.palavraAtual - 1}{col}";
-                var botao = RetornaBotao(nomeBotao);
+                var nomeBotaoTab = $"btn{termo.palavraAtual - 1}{col}";
+                var botaoTab = RetornaBotao(nomeBotaoTab);
+                var nomeBotaoKey = $"btn{letra.Caracter}";
+                var botaoKey = RetornaBotao(nomeBotaoKey);
                 if(letra.Cor == 'A')
                 {
-                    botao.BackColor = Color.Yellow;
-                }else if(letra.Cor == 'V'){
-                    botao.BackColor = Color.Green;
+                    botaoTab.BackColor = Color.Gold;
+                    if(botaoKey.BackColor != Color.Green)
+                    {
+                        botaoKey.BackColor = Color.Gold;
+                    }
+                }
+                else if(letra.Cor == 'V'){
+                    botaoTab.BackColor = Color.Green;
+                    botaoKey.BackColor = Color.Green;
                 }
                 else
                 {
-                    botao.BackColor = Color.Gray;
+                    botaoTab.BackColor = Color.Gray;
+                    botaoKey.BackColor = Color.Gray;
                 }
             }
         }
 
         private void AtualizaTeclado()
         {
-            // não sei fazer
+            
         }
     }
 }
