@@ -5,6 +5,7 @@ namespace JogoTermoApp
     public partial class Form1 : Form
     {
         private Termo termo;
+        int coluna = 1; // controla o índice da coluna
 
         public Form1()
         {
@@ -14,12 +15,14 @@ namespace JogoTermoApp
 
         private void btnM_Click(object sender, EventArgs e)
         {
+            if (coluna > 5) return;
+            // pega o valor do botão enviado (teclado virtual)
             var button = (Button)sender;
             var linha = termo.palavraAtual;
-            var coluna = 1;
             var nomeButton = $"btn{linha}{coluna}";
-            var buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
+            var buttonTabuleiro = RetornaBotao(nomeButton);
             buttonTabuleiro.Text = button.Text;
+            coluna++;
         }
 
         private void Letter_KeyPress(object sender, KeyPressEventArgs e)
@@ -30,19 +33,49 @@ namespace JogoTermoApp
             }
         }
 
-        private void Letter_TextChanged(object sender, EventArgs e)
+        private void btnEnter_Click(object sender, EventArgs e)
         {
-            TextBox current = sender as TextBox;
-
-            if (current.Text.Length == 1)
+            var palavra = string.Empty;
+            for (int i = 1; i <= 5; i++)
             {
-                if (current == letter_1) letter_2.Focus();
-                else if (current == letter_2) letter_3.Focus();
-                else if (current == letter_3) letter_4.Focus();
-                else if (current == letter_4) letter_5.Focus();
-                // letter_5 is last — do nothing
+                var nomeBotao = $"btn{termo.palavraAtual}{i}";
+                var botao = RetornaBotao(nomeBotao);
+                palavra += botao.Text;
+            }
+            termo.ChecaPalavra(palavra);
+            AtualizaTabuleiro();
+            AtualizaTeclado();
+            coluna = 1;
+        }
+
+        private Button RetornaBotao(string name)
+        {
+            return (Button)Controls.Find(name, true)[0];
+        }
+
+        private void AtualizaTabuleiro()
+        {
+            for(int col = 1; col <= 5; col++)
+            {
+                var letra = termo.tabuleiro[termo.palavraAtual-2][col-1];
+                var nomeBotao = $"btn{termo.palavraAtual - 1}{col}";
+                var botao = RetornaBotao(nomeBotao);
+                if(letra.Cor == 'A')
+                {
+                    botao.BackColor = Color.Yellow;
+                }else if(letra.Cor == 'V'){
+                    botao.BackColor = Color.Green;
+                }
+                else
+                {
+                    botao.BackColor = Color.Gray;
+                }
             }
         }
 
+        private void AtualizaTeclado()
+        {
+            // não sei fazer
+        }
     }
 }
