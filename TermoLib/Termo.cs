@@ -56,12 +56,16 @@
                 throw new Exception("A palavra deve ter 5 letras");
             }
             var palavraTabuleiro = new List<Letra>();
+            var greenLetters = new List<int>();
             char cor;
             for (int i = 0; i < palavra.Length; i++)
             {
                 if (palavra[i] == palavraSorteada[i]){
                     cor = 'V';
+                    greenLetters.Add(i);
                 }
+                /*string wordWithoutGreenLetters = new string(palavraSorteada.Where((ch, index) => !greenLetters.Contains(index)).ToArray());
+                    if (wordWithoutGreenLetters.Contains(palavra[i]))*/
                 else if (palavraSorteada.Contains(palavra[i]))
                 {
                     cor = 'A';

@@ -95,6 +95,7 @@ namespace JogoTermoApp
             }
         }
 
+        // Permite pegar os comandos do teclado antes de chegar no programa.
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Enter)
