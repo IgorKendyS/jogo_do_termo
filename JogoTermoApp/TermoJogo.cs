@@ -95,33 +95,33 @@ namespace JogoTermoApp
             }
         }
 
-        private void TermoJogo_KeyDown(object sender, KeyEventArgs e)
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            if (e.KeyCode == Keys.Back)
-            {
-                btnBackspace_Click(null, null);
-                return;
-            }
-
-            if (e.KeyCode == Keys.Enter)
+            if (keyData == Keys.Enter)
             {
                 btnEnter_Click(null, null);
-                return;
+                return true;
             }
-
-            if (e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z)
+            else if (keyData == Keys.Back)
             {
-                string keyChar = e.KeyCode.ToString();
-
-                var buttonName = $"btn{keyChar}";
-                var virtualKeyButton = RetornaBotao(buttonName);
+                btnBackspace_Click(null, null);
+                return true;
+            }
+            else if (keyData >= Keys.A && keyData <= Keys.Z)
+            {
+                var buttonName = $"btn{keyData}";
+                var virtualKeyButton = Controls.Find(buttonName, true).FirstOrDefault() as Button;
 
                 if (virtualKeyButton != null)
                 {
                     btnM_Click(virtualKeyButton, null);
+                    return true;
                 }
             }
+
+            return base.ProcessCmdKey(ref msg, keyData);
         }
+
 
     }
 }

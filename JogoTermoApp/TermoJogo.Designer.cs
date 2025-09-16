@@ -837,13 +837,11 @@
             ClientSize = new Size(800, 642);
             Controls.Add(gpbTebclado);
             Controls.Add(gpb1);
-            KeyPreview = true;
             MaximizeBox = false;
             Name = "TermoJogo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Jogo Termo - IFSP - Igor";
-            Load += this.TermoJogo_Load;
-            KeyDown += TermoJogo_KeyDown;
+            Load += TermoJogo_Load;
             gpb1.ResumeLayout(false);
             gpbTebclado.ResumeLayout(false);
             ResumeLayout(false);
