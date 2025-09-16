@@ -52,6 +52,7 @@
             }
             if (palavra.Length != 5)
             {
+                return;
                 throw new Exception("A palavra deve ter 5 letras");
             }
             var palavraTabuleiro = new List<Letra>();

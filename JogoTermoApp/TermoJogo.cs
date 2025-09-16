@@ -2,15 +2,20 @@ using TermoLib;
 
 namespace JogoTermoApp
 {
-    public partial class Form1 : Form
+    public partial class TermoJogo : Form
     {
         private Termo termo;
         int coluna = 1; // controla o índice da coluna
 
-        public Form1()
+        public TermoJogo()
         {
             InitializeComponent();
             termo = new Termo();
+        }
+
+        private void TermoJogo_Load(object sender, EventArgs e)
+        {
+            this.Focus();
         }
 
         private void btnM_Click(object sender, EventArgs e)
@@ -25,12 +30,14 @@ namespace JogoTermoApp
             coluna++;
         }
 
-        private void Letter_KeyPress(object sender, KeyPressEventArgs e)
+        private void btnBackspace_Click(object sender, EventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true; // block non-letter characters
-            }
+            if (coluna <= 1) return;
+            var linha = termo.palavraAtual;
+            var nomeButton = $"btn{linha}{coluna - 1}";
+            var buttonTabuleiro = RetornaBotao(nomeButton);
+            buttonTabuleiro.Text = "";
+            coluna--;
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -40,11 +47,12 @@ namespace JogoTermoApp
             {
                 var nomeBotao = $"btn{termo.palavraAtual}{i}";
                 var botao = RetornaBotao(nomeBotao);
-                palavra += botao.Text;
+                var letter = botao.Text;
+                if (letter == string.Empty) return;
+                palavra += letter;
             }
             termo.ChecaPalavra(palavra);
             AtualizaTabuleiro();
-            AtualizaTeclado();
             coluna = 1;
             if (termo.jogoFinalizado)
             {
@@ -59,22 +67,23 @@ namespace JogoTermoApp
 
         private void AtualizaTabuleiro()
         {
-            for(int col = 1; col <= 5; col++)
+            for (int col = 1; col <= 5; col++)
             {
-                var letra = termo.tabuleiro[termo.palavraAtual-2][col-1];
+                var letra = termo.tabuleiro[termo.palavraAtual - 2][col - 1];
                 var nomeBotaoTab = $"btn{termo.palavraAtual - 1}{col}";
                 var botaoTab = RetornaBotao(nomeBotaoTab);
                 var nomeBotaoKey = $"btn{letra.Caracter}";
                 var botaoKey = RetornaBotao(nomeBotaoKey);
-                if(letra.Cor == 'A')
+                if (letra.Cor == 'A')
                 {
                     botaoTab.BackColor = Color.Gold;
-                    if(botaoKey.BackColor != Color.Green)
+                    if (botaoKey.BackColor != Color.Green)
                     {
                         botaoKey.BackColor = Color.Gold;
                     }
                 }
-                else if(letra.Cor == 'V'){
+                else if (letra.Cor == 'V')
+                {
                     botaoTab.BackColor = Color.Green;
                     botaoKey.BackColor = Color.Green;
                 }
@@ -86,9 +95,33 @@ namespace JogoTermoApp
             }
         }
 
-        private void AtualizaTeclado()
+        private void TermoJogo_KeyDown(object sender, KeyEventArgs e)
         {
-            
+            if (e.KeyCode == Keys.Back)
+            {
+                btnBackspace_Click(null, null);
+                return;
+            }
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnEnter_Click(null, null);
+                return;
+            }
+
+            if (e.KeyCode >= Keys.A && e.KeyCode <= Keys.Z)
+            {
+                string keyChar = e.KeyCode.ToString();
+
+                var buttonName = $"btn{keyChar}";
+                var virtualKeyButton = RetornaBotao(buttonName);
+
+                if (virtualKeyButton != null)
+                {
+                    btnM_Click(virtualKeyButton, null);
+                }
+            }
         }
+
     }
 }

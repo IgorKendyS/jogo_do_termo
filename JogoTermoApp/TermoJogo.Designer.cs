@@ -1,6 +1,6 @@
 ﻿namespace JogoTermoApp
 {
-    partial class Form1
+    partial class TermoJogo
     {
         /// <summary>
         ///  Required designer variable.
@@ -94,6 +94,7 @@
             // 
             // btn11
             // 
+            btn11.Enabled = false;
             btn11.Location = new Point(30, 32);
             btn11.Name = "btn11";
             btn11.Size = new Size(44, 44);
@@ -102,6 +103,7 @@
             // 
             // btn12
             // 
+            btn12.Enabled = false;
             btn12.Location = new Point(80, 32);
             btn12.Name = "btn12";
             btn12.Size = new Size(44, 44);
@@ -110,6 +112,7 @@
             // 
             // btn13
             // 
+            btn13.Enabled = false;
             btn13.Location = new Point(130, 32);
             btn13.Name = "btn13";
             btn13.Size = new Size(44, 44);
@@ -118,6 +121,7 @@
             // 
             // btn14
             // 
+            btn14.Enabled = false;
             btn14.Location = new Point(180, 32);
             btn14.Name = "btn14";
             btn14.Size = new Size(44, 44);
@@ -126,6 +130,7 @@
             // 
             // btn15
             // 
+            btn15.Enabled = false;
             btn15.Location = new Point(230, 32);
             btn15.Name = "btn15";
             btn15.Size = new Size(44, 44);
@@ -172,6 +177,7 @@
             // 
             // btn65
             // 
+            btn65.Enabled = false;
             btn65.Location = new Point(230, 282);
             btn65.Name = "btn65";
             btn65.Size = new Size(44, 44);
@@ -180,6 +186,7 @@
             // 
             // btn55
             // 
+            btn55.Enabled = false;
             btn55.Location = new Point(230, 232);
             btn55.Name = "btn55";
             btn55.Size = new Size(44, 44);
@@ -188,6 +195,7 @@
             // 
             // btn61
             // 
+            btn61.Enabled = false;
             btn61.Location = new Point(30, 282);
             btn61.Name = "btn61";
             btn61.Size = new Size(44, 44);
@@ -196,6 +204,7 @@
             // 
             // btn51
             // 
+            btn51.Enabled = false;
             btn51.Location = new Point(30, 232);
             btn51.Name = "btn51";
             btn51.Size = new Size(44, 44);
@@ -204,6 +213,7 @@
             // 
             // btn64
             // 
+            btn64.Enabled = false;
             btn64.Location = new Point(180, 282);
             btn64.Name = "btn64";
             btn64.Size = new Size(44, 44);
@@ -212,6 +222,7 @@
             // 
             // btn54
             // 
+            btn54.Enabled = false;
             btn54.Location = new Point(180, 232);
             btn54.Name = "btn54";
             btn54.Size = new Size(44, 44);
@@ -220,6 +231,7 @@
             // 
             // btn62
             // 
+            btn62.Enabled = false;
             btn62.Location = new Point(80, 282);
             btn62.Name = "btn62";
             btn62.Size = new Size(44, 44);
@@ -228,6 +240,7 @@
             // 
             // btn63
             // 
+            btn63.Enabled = false;
             btn63.Location = new Point(130, 282);
             btn63.Name = "btn63";
             btn63.Size = new Size(44, 44);
@@ -236,6 +249,7 @@
             // 
             // btn52
             // 
+            btn52.Enabled = false;
             btn52.Location = new Point(80, 232);
             btn52.Name = "btn52";
             btn52.Size = new Size(44, 44);
@@ -244,6 +258,7 @@
             // 
             // btn53
             // 
+            btn53.Enabled = false;
             btn53.Location = new Point(130, 232);
             btn53.Name = "btn53";
             btn53.Size = new Size(44, 44);
@@ -252,6 +267,7 @@
             // 
             // btn45
             // 
+            btn45.Enabled = false;
             btn45.Location = new Point(230, 182);
             btn45.Name = "btn45";
             btn45.Size = new Size(44, 44);
@@ -260,6 +276,7 @@
             // 
             // btn41
             // 
+            btn41.Enabled = false;
             btn41.Location = new Point(30, 182);
             btn41.Name = "btn41";
             btn41.Size = new Size(44, 44);
@@ -268,6 +285,7 @@
             // 
             // btn44
             // 
+            btn44.Enabled = false;
             btn44.Location = new Point(180, 182);
             btn44.Name = "btn44";
             btn44.Size = new Size(44, 44);
@@ -276,6 +294,7 @@
             // 
             // btn42
             // 
+            btn42.Enabled = false;
             btn42.Location = new Point(80, 182);
             btn42.Name = "btn42";
             btn42.Size = new Size(44, 44);
@@ -284,6 +303,7 @@
             // 
             // btn43
             // 
+            btn43.Enabled = false;
             btn43.Location = new Point(130, 182);
             btn43.Name = "btn43";
             btn43.Size = new Size(44, 44);
@@ -292,6 +312,7 @@
             // 
             // btn35
             // 
+            btn35.Enabled = false;
             btn35.Location = new Point(230, 132);
             btn35.Name = "btn35";
             btn35.Size = new Size(44, 44);
@@ -300,6 +321,7 @@
             // 
             // btn31
             // 
+            btn31.Enabled = false;
             btn31.Location = new Point(30, 132);
             btn31.Name = "btn31";
             btn31.Size = new Size(44, 44);
@@ -308,6 +330,7 @@
             // 
             // btn34
             // 
+            btn34.Enabled = false;
             btn34.Location = new Point(180, 132);
             btn34.Name = "btn34";
             btn34.Size = new Size(44, 44);
@@ -316,6 +339,7 @@
             // 
             // btn32
             // 
+            btn32.Enabled = false;
             btn32.Location = new Point(80, 132);
             btn32.Name = "btn32";
             btn32.Size = new Size(44, 44);
@@ -324,6 +348,7 @@
             // 
             // btn33
             // 
+            btn33.Enabled = false;
             btn33.Location = new Point(130, 132);
             btn33.Name = "btn33";
             btn33.Size = new Size(44, 44);
@@ -332,6 +357,7 @@
             // 
             // btn25
             // 
+            btn25.Enabled = false;
             btn25.Location = new Point(230, 82);
             btn25.Name = "btn25";
             btn25.Size = new Size(44, 44);
@@ -340,6 +366,7 @@
             // 
             // btn21
             // 
+            btn21.Enabled = false;
             btn21.Location = new Point(30, 82);
             btn21.Name = "btn21";
             btn21.Size = new Size(44, 44);
@@ -348,6 +375,7 @@
             // 
             // btn24
             // 
+            btn24.Enabled = false;
             btn24.Location = new Point(180, 82);
             btn24.Name = "btn24";
             btn24.Size = new Size(44, 44);
@@ -356,6 +384,7 @@
             // 
             // btn22
             // 
+            btn22.Enabled = false;
             btn22.Location = new Point(80, 82);
             btn22.Name = "btn22";
             btn22.Size = new Size(44, 44);
@@ -364,6 +393,7 @@
             // 
             // btn23
             // 
+            btn23.Enabled = false;
             btn23.Location = new Point(130, 82);
             btn23.Name = "btn23";
             btn23.Size = new Size(44, 44);
@@ -544,6 +574,7 @@
             btnBackspace.TabIndex = 24;
             btnBackspace.Text = "<=";
             btnBackspace.UseVisualStyleBackColor = false;
+            btnBackspace.Click += btnBackspace_Click;
             // 
             // btnK
             // 
@@ -798,7 +829,7 @@
             btnE.UseVisualStyleBackColor = false;
             btnE.Click += btnM_Click;
             // 
-            // Form1
+            // TermoJogo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -806,10 +837,13 @@
             ClientSize = new Size(800, 642);
             Controls.Add(gpbTebclado);
             Controls.Add(gpb1);
+            KeyPreview = true;
             MaximizeBox = false;
-            Name = "Form1";
+            Name = "TermoJogo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Jogo Termo - IFSP - Igor";
+            Load += this.TermoJogo_Load;
+            KeyDown += TermoJogo_KeyDown;
             gpb1.ResumeLayout(false);
             gpbTebclado.ResumeLayout(false);
             ResumeLayout(false);
